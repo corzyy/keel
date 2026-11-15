@@ -1,0 +1,10 @@
+{
+  "uuid": "keel@local",
+  "name": "Keel",
+  "description": "A single bottom panel: the top bar, an app launcher and a taskbar in one bar.",
+  "shell-version": [
+    "51"
+  ],
+  "settings-schema": "org.gnome.shell.extensions.keel",
+  "version-name": "0.1"
+}

@@ -1,0 +1,88 @@
+/* Keel — the panel is still #panel; these style what Keel adds to it.
+   Sizes, radii and spacing of the taskbar come from lib/metrics.js
+   (they follow the panel height), so only colors live here. Windows 11 feel:
+   flat buttons, a soft highlight on hover / for the focused app, and a short
+   pill for running apps that grows and takes the accent color when focused. */
+
+/* The button spans the panel's thickness (bigger click target); the
+   highlight is drawn by the square face inside it. */
+.keel-task {
+    padding: 0;
+}
+
+.keel-task-face {
+    transition-duration: 150ms;
+}
+
+.keel-task:hover .keel-task-face,
+.keel-task:focus .keel-task-face {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.keel-task.focused .keel-task-face {
+    background-color: rgba(255, 255, 255, 0.11);
+}
+
+.keel-task.focused:hover .keel-task-face {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.keel-task:active .keel-task-face {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.keel-task-label {
+    font-weight: normal;
+}
+
+.keel-task-pill {
+    background-color: rgba(255, 255, 255, 0.55);
+}
+
+.keel-task.focused .keel-task-pill {
+    background-color: -st-accent-color;
+}
+
+/* Window previews (features/taskbar/windowPreview.js). */
+.keel-preview {
+    background-color: rgba(38, 38, 42, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    padding: 6px;
+    spacing: 4px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    color: white;
+}
+
+.keel-preview-item {
+    border-radius: 10px;
+    padding: 6px 8px 8px 8px;
+    transition-duration: 100ms;
+}
+
+.keel-preview-item:hover,
+.keel-preview-item:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.keel-preview-item:active {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.keel-preview-header {
+    spacing: 6px;
+    padding-bottom: 6px;
+}
+
+.keel-preview-title {
+    font-size: 0.9em;
+}
+
+.keel-preview-close {
+    border-radius: 99px;
+    padding: 3px;
+}
+
+.keel-preview-close:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}

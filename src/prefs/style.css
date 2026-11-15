@@ -1,0 +1,83 @@
+/* Keel settings. Loaded by prefs.js for the lifetime of the window. */
+
+/* --- Layout editor: one column per section, plus hidden ------------------ */
+
+.keel-column {
+    border-radius: 10px;
+    padding: 6px;
+    background: var(--card-bg-color);
+    box-shadow: 0 0 0 1px alpha(currentColor, 0.08);
+    transition: background 120ms, box-shadow 120ms;
+}
+.keel-column.hidden-column {
+    padding: 4px 6px 4px 10px;
+    background: transparent;
+    box-shadow: inset 0 0 0 1px alpha(currentColor, 0.15);
+}
+.hidden-column .keel-column-title { margin: 0; }
+.keel-empty { padding: 4px 6px; }
+.keel-column.drop-hover {
+    background: alpha(var(--accent-bg-color), 0.12);
+    box-shadow: 0 0 0 2px var(--accent-bg-color);
+}
+.keel-column-title {
+    font-size: 0.85em;
+    font-weight: 700;
+    opacity: 0.55;
+    margin: 0 4px 1px;
+}
+.keel-empty {
+    font-size: 0.85em;
+    opacity: 0.4;
+}
+
+button.keel-chip {
+    min-height: 0;
+    padding: 4px 8px;
+    border-radius: 7px;
+    font-weight: normal;
+    background: alpha(currentColor, 0.07);
+}
+button.keel-chip:hover { background: alpha(currentColor, 0.12); }
+button.keel-chip:active { background: alpha(currentColor, 0.18); }
+.hidden-column button.keel-chip { opacity: 0.7; }
+button.keel-chip.dragging { opacity: 0.35; }
+
+.keel-marker {
+    min-height: 3px;
+    margin: 0 4px;
+    border-radius: 2px;
+    background: var(--accent-bg-color);
+}
+
+/* --- Clock style picker -------------------------------------------------- */
+
+.keel-choice {
+    padding: 14px 14px 10px;
+    border-radius: 14px;
+    background: var(--card-bg-color);
+    box-shadow: 0 0 0 1px alpha(currentColor, 0.08);
+}
+.keel-choice:hover { background: alpha(currentColor, 0.07); }
+.keel-choice:checked {
+    background: alpha(var(--accent-bg-color), 0.14);
+    box-shadow: 0 0 0 2px var(--accent-bg-color);
+}
+.keel-sample-bar {
+    border-radius: 9px;
+    background: rgba(18, 18, 22, 0.94);
+    color: white;
+    padding: 6px 14px;
+    min-height: 34px;
+}
+
+/* --- About --------------------------------------------------------------- */
+
+.keel-about-version {
+    font-size: 0.85em;
+    padding: 3px 10px;
+    border-radius: 99px;
+    background: alpha(var(--accent-bg-color), 0.15);
+    color: var(--accent-color);
+    font-weight: 600;
+}

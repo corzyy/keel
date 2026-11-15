@@ -1,0 +1,10 @@
+import {ExtensionPreferences} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
+
+import {importFromCurrentBuild} from './common.js';
+
+export default class KeelPrefsLoader extends ExtensionPreferences {
+    async fillPreferencesWindow(window) {
+        const {default: Impl} = await importFromCurrentBuild(this.path, 'prefs.js');
+        await new Impl(this.metadata).fillPreferencesWindow(window);
+    }
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="keel">
+  <enum id="org.gnome.shell.extensions.keel.position">
+    <value nick="bottom" value="0"/>
+    <value nick="top" value="1"/>
+    <value nick="left" value="2"/>
+    <value nick="right" value="3"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.keel.clock-style">
+    <value nick="gnome" value="0"/>
+    <value nick="windows" value="1"/>
+  </enum>
+
+  <schema id="org.gnome.shell.extensions.keel" path="/org/gnome/shell/extensions/keel/">
+    <key name="position" enum="org.gnome.shell.extensions.keel.position">
+      <default>'bottom'</default>
+      <summary>Screen edge the panel sits on</summary>
+    </key>
+    <key name="panel-height" type="i">
+      <range min="24" max="96"/>
+      <default>48</default>
+      <summary>Panel thickness in pixels (height, or width for a left/right panel)</summary>
+    </key>
+    <key name="icon-size" type="i">
+      <range min="16" max="64"/>
+      <default>32</default>
+      <summary>Largest taskbar icon size in pixels (icons otherwise follow the panel height)</summary>
+    </key>
+    <key name="show-favorites" type="b">
+      <default>true</default>
+      <summary>Show pinned (favorite) apps in the taskbar</summary>
+    </key>
+    <key name="show-apps-button" type="b">
+      <default>true</default>
+      <summary>Show the app grid button at the start of the taskbar</summary>
+    </key>
+    <key name="group-windows" type="b">
+      <default>true</default>
+      <summary>One taskbar button per app; off: one button per window</summary>
+    </key>
+    <key name="show-labels" type="b">
+      <default>false</default>
+      <summary>Show the window title (or app name) next to each taskbar icon; top or bottom panel only</summary>
+    </key>
+    <key name="clock-style" enum="org.gnome.shell.extensions.keel.clock-style">
+      <default>'gnome'</default>
+      <summary>Clock layout</summary>
+      <description>gnome: the stock one-line clock. windows: Windows 11 style, time over date, right-aligned. A left/right panel always shows time over a short date.</description>
+    </key>
+    <key name="show-power-icon" type="b">
+      <default>true</default>
+      <summary>Show the power (battery) icon in Quick Settings</summary>
+    </key>
+    <key name="window-previews" type="b">
+      <default>true</default>
+      <summary>Show window previews when hovering a taskbar button</summary>
+    </key>
+    <key name="preview-delay" type="i">
+      <range min="0" max="2000"/>
+      <default>400</default>
+      <summary>Hover time in milliseconds before a window preview opens</summary>
+    </key>
+    <key name="preview-size" type="i">
+      <range min="120" max="480"/>
+      <default>220</default>
+      <summary>Width of a 16:9 window's preview thumbnail in pixels; thumbnails follow their window's shape</summary>
+    </key>
+    <key name="panel-layout" type="a{sas}">
+      <default>{'left': ['arcmenu', 'taskbar'], 'center': ['clock'], 'right': ['indicators', 'quickSettings']}</default>
+      <summary>Which modules sit in the left, center and right section of the panel</summary>
+      <description>Keys are left, center and right; values are ordered module ids (arcmenu, weather, activities, taskbar, clock, indicators, quickSettings). Modules that appear in no section are hidden.</description>
+    </key>
+  </schema>
+</schemalist>
